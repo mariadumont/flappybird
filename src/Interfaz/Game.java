@@ -48,12 +48,12 @@ public class Game extends javax.swing.JFrame {
         jPipe_up2 = new javax.swing.JLabel();
         jPipe_down2 = new javax.swing.JLabel();
         initComponents();
-        this.setLocationRelativeTo(null);
+        setLocationRelativeTo(null);
         hideObjects(false);
         login = new Login();
         showLogin();
-        EventosExternos();
-        this.setTitle("FLAPPY BIRD");
+        eventosExternos();
+        setTitle("FLAPPY BIRD");
         score = new Score(this);
         flappyPosition = jFlappy.getLocation();
         this.jPanelMain.setSize(400, 607);
@@ -179,7 +179,7 @@ public class Game extends javax.swing.JFrame {
         return deltaTime;
     }
 
-    private void EventosExternos() {
+    private void eventosExternos() {
         login.jButton1.addActionListener(new java.awt.event.ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt) {
