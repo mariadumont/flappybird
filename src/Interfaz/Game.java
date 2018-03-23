@@ -81,11 +81,11 @@ public class Game extends javax.swing.JFrame {
         jFloor.setLayout(gl_jFloor);
         gl_jFloor.setHorizontalGroup(
                 gl_jFloor.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 580, Short.MAX_VALUE)
+                        .addGap(0, 580, Short.MAX_VALUE)
         );
         gl_jFloor.setVerticalGroup(
                 gl_jFloor.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGap(0, 180, Short.MAX_VALUE)
+                        .addGap(0, 180, Short.MAX_VALUE)
         );
 
         panelImageGame.add(jFloor);
@@ -128,24 +128,24 @@ public class Game extends javax.swing.JFrame {
         jPanelMain.setLayout(gl_jPanelMain);
         gl_jPanelMain.setHorizontalGroup(
                 gl_jPanelMain.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(gl_jPanelMain.createSequentialGroup()
-                        .addComponent(panelImageGame, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                        .addGap(0, 0, 0))
+                        .addGroup(gl_jPanelMain.createSequentialGroup()
+                                .addComponent(panelImageGame, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                                .addGap(0, 0, 0))
         );
         gl_jPanelMain.setVerticalGroup(
                 gl_jPanelMain.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(panelImageGame, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(panelImageGame, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanelMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanelMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jPanelMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanelMain, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         pack();
     }
@@ -154,7 +154,10 @@ public class Game extends javax.swing.JFrame {
         if (start) {
             if (evt.getExtendedKeyCode() == 32) {
                 this.mvnt_flappy.setDeltaTime(decreaseDeltaTime());
-                this.mvnt_flappy.setJump(true);
+
+                //this.mvnt_flappy.setJump(true);
+                this.mvnt_flappy.jump();
+
                 jFlappy.requestFocus(true);
                 MySound.saltar();
             }
@@ -165,7 +168,10 @@ public class Game extends javax.swing.JFrame {
     private void panelImage1MousePressed(java.awt.event.MouseEvent evt) {
         if (start) {
             this.mvnt_flappy.setDeltaTime(decreaseDeltaTime());
-            this.mvnt_flappy.setJump(true);
+
+            //this.mvnt_flappy.setJump(true);
+            this.mvnt_flappy.jump();
+
             jFlappy.requestFocus(true);
             MySound.saltar();
         }
@@ -214,25 +220,30 @@ public class Game extends javax.swing.JFrame {
         if (loclz_Flappy.x > (loclz_Tubo1.x - 32) && loclz_Flappy.x < ((loclz_Tubo1.x - 32) + 82) && loclz_Flappy.y < (loclz_Tubo1.y + 318)) {
             MySound.choque();
             this.mvnt_pipes.interrupt();
-            this.mvnt_flappy.setJump(false);
+
+            //this.mvnt_flappy.setJump(false);
             start = false;
             MySound.caida();
         } else if (loclz_Flappy.x > (loclz_Tubo2.x - 32) && loclz_Flappy.x < ((loclz_Tubo2.x - 32) + 82) && loclz_Flappy.y < (loclz_Tubo2.y + 318)) {
             MySound.choque();
             this.mvnt_pipes.interrupt();
-            this.mvnt_flappy.setJump(false);
+
+            //this.mvnt_flappy.setJump(false);
             start = false;
             MySound.caida();
         } else if (loclz_Flappy.x > (loclz_Tubo3.x - 32) && loclz_Flappy.x < ((loclz_Tubo3.x - 32) + 82) && loclz_Flappy.y > (loclz_Tubo3.y - 22)) {
             MySound.choque();
             this.mvnt_pipes.interrupt();
-            this.mvnt_flappy.setJump(false);
+
+            // this.mvnt_flappy.setJump(false);
             start = false;
             MySound.caida();
         } else if (loclz_Flappy.x > (loclz_Tubo4.x - 32) && loclz_Flappy.x < ((loclz_Tubo4.x - 32) + 82) && loclz_Flappy.y > (loclz_Tubo4.y - 22)) {
             MySound.choque();
             this.mvnt_pipes.interrupt();
-            this.mvnt_flappy.setJump(false);
+
+            // this.mvnt_flappy.setJump(false);
+            //  this.mvnt_flappy.jump();
             start = false;
             MySound.caida();
         }
