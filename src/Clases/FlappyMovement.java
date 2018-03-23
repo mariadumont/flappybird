@@ -38,7 +38,7 @@ public class FlappyMovement extends Thread {
                   
             Game.jFlappy.setLocation(x, y);
             Toolkit.getDefaultToolkit().sync();
-//-------------------------------------------
+//---------------------------------------------
 
             try {
                 Thread.sleep(getDeltaTime());
